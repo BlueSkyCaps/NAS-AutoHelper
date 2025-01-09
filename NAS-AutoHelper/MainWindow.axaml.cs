@@ -20,8 +20,6 @@ public partial class MainWindow : Window
     public static SettingModel Setting  = new();
     public MainWindow()
     {
-        
-        
         // 确保当前只有一个此应用实例在运行
         var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
         if (System.Diagnostics.Process.GetProcessesByName(processName).Length>1)
