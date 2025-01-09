@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using Avalonia;
@@ -17,14 +18,13 @@ public partial class MainWindow : Window
 {
     private static Timer? _mainPingTimer;
     private static Timer? _shutdownTimer;
-    public static SettingModel Setting  = new();
+    public static SettingModel Setting { get; set; } = new();
     public MainWindow()
     {
         // 确保当前只有一个此应用实例在运行
         var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
         if (System.Diagnostics.Process.GetProcessesByName(processName).Length>1)
         {
-            TrayIcon.GetIcons(Application.Current).FirstOrDefault().IsVisible = true;
             Console.WriteLine(processName);
             Dispatcher.UIThread.InvokeAsync(async () =>
             {
@@ -40,21 +40,12 @@ public partial class MainWindow : Window
             // 直接return 不让他执行后续的初始化逻辑
             return;
         }
+        //  显示托盘
+        TrayIcon.GetIcons(Application.Current).FirstOrDefault().IsVisible = true;
         InitializeComponent();
-        InitSetting();
-        
-    }
-
-    /// <summary>
-    /// 初始化加载配置等
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    private void InitSetting()
-    {
-        //todo 加载配置文件
-        
         // 开始网络监测
         InitNetLogic();
+        
     }
 
     /// <summary>
@@ -67,7 +58,7 @@ public partial class MainWindow : Window
         // 无论如何，先关闭关机的Timer。即使第一次它还没被创建。用于后续点击撤销关机按钮时统一关闭
         _shutdownTimer?.Dispose();
         // 启动：每倒计时秒钟触发一次Tick方法 ping路由 
-        _mainPingTimer = new Timer(PingTickAction, null, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(2)); 
+        _mainPingTimer = new Timer(PingTickAction, null, TimeSpan.FromSeconds(Setting.PingTickSeconds), TimeSpan.FromSeconds(Setting.PingTickSeconds)); 
     }
     
     private static void PingTickAction(object? state)
@@ -75,8 +66,7 @@ public partial class MainWindow : Window
         // 先暂停网络监测 避免执行重复 等到当前的ping操作执行完毕，根据结果再判断是否重启监测
         _mainPingTimer?.Dispose();
         // ping 光猫IP是最直接有效的
-        string cmd = "ping -c1 -t3 192.168.1.1";
-        var status = Common.ExecutePing(cmd);
+        var status = Common.ExecutePing();
         Console.WriteLine(status.Message);
         if (! status.Success)
         {

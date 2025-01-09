@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
@@ -8,16 +9,43 @@ namespace NAS_AutoHelper;
 
 public static class Common
 {
-    // private string macShutdownCmd = "echo \"1111\" | sudo -S shutdown -h now";
-    // private string winShutdownCmd = "shutdown /s /f /t 0";
+    public static readonly string UserDataDir = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".NAS-AutoHelper");
+    public static readonly string UserDataPath = Path.Combine(UserDataDir, "Settings.json");
+    
+    public static bool IsValidIPv4(string ipAddress)
+    {
+        if (string.IsNullOrWhiteSpace(ipAddress))
+            return false;
+
+        var segments = ipAddress.Split('.');
+        if (segments.Length != 4)
+            return false;
+
+        foreach (var segment in segments)
+        {
+            if (!int.TryParse(segment, out int value) || value < 0 || value > 255)
+                return false;
+        }
+
+        return true;
+    }
     /// <summary>
     /// 执行一个ping命令
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
-    public static Status ExecutePing(string command)
+    public static Status ExecutePing(string? command=null)
     {
+        if (command == null)
+        {
+            command = $"ping -n 1 -w 3000 {MainWindow.Setting.PingHost}";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                command = $"ping -c1 -t3 {MainWindow.Setting.PingHost}";
+            }
+        }
         Status status = new();
         try
         {
@@ -56,8 +84,16 @@ public static class Common
     /// 执行关机命令
     /// </summary>
     /// <exception cref="NotImplementedException"></exception>
-    public static Status ExecuteShutdown(string command)
+    public static Status ExecuteShutdown(string? command=null)
     {
+        if (command == null)
+        {
+            command = "shutdown /s /f /t 0";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                command = $"echo \"{MainWindow.Setting.MacPassword}\" | sudo -S shutdown -h now";
+            }
+        }
         Status status = new();
         try
         {

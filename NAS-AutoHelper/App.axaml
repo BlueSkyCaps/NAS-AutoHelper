@@ -13,14 +13,10 @@
              <TrayIcon Icon="/Assets/tray.png"  IsVisible="False">
                  <TrayIcon.Menu>
                      <NativeMenu>
-                         <NativeMenuItem Header="Settings">
-                             <NativeMenu>
-                                 <NativeMenuItem Header="Option 1"   />
-                                 <NativeMenuItem Header="Option 2"   />
-                                 <NativeMenuItemSeparator />
-                                 <NativeMenuItem Header="Option 3"  />
-                             </NativeMenu>
-                         </NativeMenuItem>
+                         <NativeMenuItem Header="设置" Click="SettingItem_OnClick"/>
+                         <NativeMenuItem Header="说明" Click="AboutItem_OnClick"/>
+                         <NativeMenuItemSeparator />
+                         <NativeMenuItem Header="退出"   Click="ExitItem_OnClick"/>
                      </NativeMenu>
                  </TrayIcon.Menu>
              </TrayIcon>
