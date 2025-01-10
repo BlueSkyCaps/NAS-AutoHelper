@@ -92,8 +92,7 @@ public partial class MainWindow : Window
 
         Console.WriteLine("开始执行关机 ShutdownOnceTickAction");
         // Mac 使用 sudo 执行关机命令，需要管理员权限。windows无需
-        var status = Common.ExecuteShutdown("echo '111' | sudo -S pwd");
-        // var status = Common.ExecuteShutdown("echo \"1111\" | sudo -S shutdown -h now");
+        var status = Common.ExecuteShutdown();
         if (status.Success)
         {
             Console.WriteLine("关机执行成功，返回数据："+status.Message);
@@ -101,6 +100,7 @@ public partial class MainWindow : Window
         else
         {
             Console.WriteLine("执行关机失败 ShutdownOnceTickAction"+status.Message);
+            _mainPingTimer?.Dispose();
             Dispatcher.UIThread.InvokeAsync(async () =>
             {
                 // 执行关机命令失败 弹出提示
