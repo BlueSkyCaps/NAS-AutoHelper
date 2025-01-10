@@ -12,7 +12,9 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\*" />
-        <AvaloniaResource Include="_mac_publish\tray.icns" />
+        <AvaloniaResource Include="_mac_publish\tray.icns">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </AvaloniaResource>
         <PackageReference Include="Avalonia" Version="11.2.1" />
         <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />

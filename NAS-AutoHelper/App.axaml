@@ -2,12 +2,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="NAS_AutoHelper.App"
              RequestedThemeVariant="Default"
+             Name="NAS自动关机"
              >
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-    
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
+    
+    <!-- macOS覆盖默认的Avalonia菜单栏 -->
+    <NativeMenu.Menu>
+         <NativeMenu>
+             <NativeMenuItem Header="NAS自动关机" />
+         </NativeMenu>
+    </NativeMenu.Menu>
+    <!-- 托盘菜单 -->
     <TrayIcon.Icons>
          <TrayIcons>
              <TrayIcon Icon="/Assets/tray.png"  IsVisible="False">

@@ -6,6 +6,7 @@ PUBLISH_OUTPUT_DIRECTORY="/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHel
 # If you want to change output directories, add `--output /my/directory/path` to your `dotnet publish` command.
 INFO_PLIST="/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHelper/NAS-AutoHelper/_mac_publish/Info.plist"
 ICON_FILE="/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHelper/NAS-AutoHelper/_mac_publish/tray.icns"
+ICON_FILE_NAME="tray.icns"
 
 if [ -d "$APP_NAME" ]
 then
@@ -19,5 +20,5 @@ mkdir "$APP_NAME/Contents/MacOS"
 mkdir "$APP_NAME/Contents/Resources"
 
 cp "$INFO_PLIST" "$APP_NAME/Contents/Info.plist"
-cp "$ICON_FILE" "$APP_NAME/Contents/Resources/$ICON_FILE"
+cp "$ICON_FILE" "$APP_NAME/Contents/Resources/$ICON_FILE_NAME"
 cp -a "$PUBLISH_OUTPUT_DIRECTORY" "$APP_NAME/Contents/MacOS"
