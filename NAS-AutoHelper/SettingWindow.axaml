@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:model="clr-namespace:NAS_AutoHelper.Model"
+        xmlns:nasAutoHelper="clr-namespace:NAS_AutoHelper"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="NAS_AutoHelper.SettingWindow"
         SizeToContent="WidthAndHeight"
@@ -12,13 +13,15 @@
         <Panel Margin="80,0,80,10">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Label Content="填写路由器IP："></Label>
-                        <TextBox Name="TbPingHost" Text="{Binding PingHost}"></TextBox>
+                        <TextBox Name="TbPingHost" Text="{Binding PingHost, Mode=OneWay}"></TextBox>
                         <Label Content="检测间隔(秒)："></Label>
-                        <NumericUpDown Minimum="10" Name="TbPingTickSeconds" Value="{Binding PingTickSeconds}"/>
+                        <NumericUpDown Minimum="15" Name="TbPingTickSeconds" Value="{Binding PingTickSeconds, Mode=OneWay}"/>
                         <Label Content="关机倒计时(秒)："></Label>
-                        <NumericUpDown Minimum="0" Name="TbCountdownSeconds" Value="{Binding CountdownSeconds}"/>
-                        <Label Content="Mac锁屏密码(空则忽略)："></Label>
-                        <TextBox PasswordChar="•" Name="TbMacPassword" Text="{Binding MacPassword}"></TextBox>
+                        <NumericUpDown Minimum="0" Name="TbCountdownSeconds" Value="{Binding CountdownSeconds, Mode=OneWay}"/>
+                        <StackPanel Orientation="Vertical" Name="TbMacPanel" IsVisible="{Binding $parent[nasAutoHelper:SettingWindow].MacPanelVis}">
+                                <Label Content="Mac锁屏密码(空则忽略)："></Label>
+                                <TextBox PasswordChar="•" Name="TbMacPassword" Text="{Binding MacPassword, Mode=OneWay}"></TextBox>
+                        </StackPanel>
                         <Separator  Margin="0,10,0,10"></Separator>
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Button Name="CancelBtn" Click="CancelBtn_OnClick">取消</Button>

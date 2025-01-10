@@ -77,8 +77,8 @@ public partial class MainWindow : Window
             {
                 new TickWindow().Show();
             });
-            // 60秒后执行的关机timer，无限期间隔等待意味它只会执行一次
-            _shutdownTimer = new Timer(ShutdownOnceTickAction,null, TimeSpan.FromSeconds(10), Timeout.InfiniteTimeSpan);
+            // X秒后执行的关机timer，无限期间隔等待意味它只会执行一次
+            _shutdownTimer = new Timer(ShutdownOnceTickAction,null, TimeSpan.FromSeconds(Setting.CountdownSeconds), Timeout.InfiniteTimeSpan);
         }
         else
         {
@@ -101,7 +101,7 @@ public partial class MainWindow : Window
         else
         {
             Console.WriteLine("执行关机失败 ShutdownOnceTickAction"+status.Message);
-            Dispatcher.UIThread.InvokeAsync(() =>
+            Dispatcher.UIThread.InvokeAsync(async () =>
             {
                 // 执行关机命令失败 弹出提示
                 string msg = "当您看到此信息，意味着您的设备已经过断电断网，但是我们无法正常关机。\n" +
@@ -109,7 +109,8 @@ public partial class MainWindow : Window
                            $"(错误提示：{status.Message})";
                 var box = MessageBoxManager
                     .GetMessageBoxStandard("NAS奔溃", msg);
-                box.ShowAsync();
+                await box.ShowAsync();
+                Environment.Exit(1);
             });
         }
     }

@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
@@ -13,6 +14,7 @@ namespace NAS_AutoHelper;
 
 public partial class SettingWindow : Window
 {
+    public bool MacPanelVis{get; set; }=RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
     public SettingWindow()
     {
         this.DataContext = MainWindow.Setting;

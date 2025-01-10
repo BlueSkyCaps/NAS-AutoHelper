@@ -11,9 +11,9 @@ namespace NAS_AutoHelper;
 public partial class TickWindow : Window
 {
     private Timer? _timer;
-    public static readonly StyledProperty<int> SecondsProperty =
-        AvaloniaProperty.Register<TextBlock, int>(nameof(Seconds), defaultValue: 10);
-    public int Seconds
+    public static readonly StyledProperty<uint> SecondsProperty =
+        AvaloniaProperty.Register<TextBlock, uint>(nameof(Seconds), defaultValue: MainWindow.Setting.CountdownSeconds);
+    public uint Seconds
     {
         get => GetValue(SecondsProperty);
         set => SetValue(SecondsProperty, value);
