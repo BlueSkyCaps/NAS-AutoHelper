@@ -4,7 +4,7 @@ PUBLISH_OUTPUT_DIRECTORY="/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHel
 # PUBLISH_OUTPUT_DIRECTORY should point to the output directory of your dotnet publish command.
 # One example is /path/to/your/csproj/bin/Release/netcoreapp3.1/osx-x64/publish/.
 # If you want to change output directories, add `--output /my/directory/path` to your `dotnet publish` command.
-INFO_PLIST="/path/to/your/Info.plist"
+INFO_PLIST="/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHelper/NAS-AutoHelper/_mac_publish/Info.plist"
 ICON_FILE="/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHelper/NAS-AutoHelper/_mac_publish/tray.icns"
 
 if [ -d "$APP_NAME" ]
