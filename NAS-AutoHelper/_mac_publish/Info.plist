@@ -19,7 +19,7 @@
         <string>NAS-AutoHelper</string> <!-- 应用程序的可执行文件名 -->
         <!-- 应用程序的图标 -->
         <key>CFBundleIconFile</key>
-        <string>/Users/bluesky/Workspace/Projects/No-Front/NAS-AutoHelper/NAS-AutoHelper/_mac_publish/tray.icns</string>
+        <string>tray.icns</string>
 <!--        &lt;!&ndash; 登录项支持 &ndash;&gt;-->
 <!--        <key>SMPrivilegedExecutables</key>-->
 <!--        <dict>-->
