@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <!-- 应用程序的名称和其他基本信息 -->
+        <key>CFBundleName</key>
+        <string>NAS自动关机</string> <!-- 应用名称 -->
+        <key>CFBundleDisplayName</key>
+        <string>NAS自动关机</string> <!-- 显示在应用图标下的名称 -->
+        <key>CFBundleIdentifier</key>
+        <string>top.reminisce.NAS-AutoHelper</string> <!-- 应用程序的唯一标识符 -->
+        <key>CFBundleVersion</key>
+        <string>1.0.0</string> <!-- 应用程序的版本号 -->
+        <key>CFBundleShortVersionString</key>
+        <string>版本1.0.0</string> <!-- 应用程序的版本号，用于用户显示 -->
+        <key>NSHighResolutionCapable</key>
+        <true/>
+        <key>CFBundleExecutable</key>
+        <string>NAS-AutoHelper</string> <!-- 应用程序的可执行文件名 -->
+        <!-- 应用程序的图标 -->
+        <key>CFBundleIconFile</key>
+        <string>tray.icns</string>
+<!--        &lt;!&ndash; 登录项支持 &ndash;&gt;-->
+<!--        <key>SMPrivilegedExecutables</key>-->
+<!--        <dict>-->
+<!--            <key>top.reminisce.NAS-AutoHelper.helper</key>-->
+<!--            <string>identifier</string>-->
+<!--        </dict>-->
+
+<!--        &lt;!&ndash; 适用于自动化的额外权限 &ndash;&gt;-->
+<!--        <key>NSAppleEventsUsageDescription</key>-->
+<!--        <string>This app needs 适用于自动化的额外权限</string>-->
+
+<!--        &lt;!&ndash; 其他权限声明 &ndash;&gt;-->
+<!--        <key>NSFileSystemUsageDescription</key>-->
+<!--        <string>This app requires 其他权限</string>-->
+    </dict>
+</plist>

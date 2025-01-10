@@ -31,6 +31,7 @@ public partial class SettingWindow : Window
         var sTbPingHost = TbPingHost.Text?.Trim();
         var sTbPingTickSeconds = TbPingTickSeconds.Value;
         var sTbCountdownSeconds = TbCountdownSeconds.Value;
+        var sTbMacPassword = TbMacPassword.Text;
         if (!Common.IsValidIPv4(sTbPingHost))
         {
             string msg = "无效的IPv4地址";
@@ -64,24 +65,27 @@ public partial class SettingWindow : Window
             });
             return;
         }
-
-        if (string.IsNullOrEmpty(TbMacPassword.Text))
+        // Mac需要密码
+        if (MacPanelVis)
         {
-            string msg = "您确定你的锁屏密码是空吗？！\n" +
-                         "由于macOS的安全机制，执行关机权限需要获得您的登录密码(非AppleID)。\n" +
-                         "您必须去[系统设置]里设置有效的登录密码才能使用此应用！";
-            await Dispatcher.UIThread.InvokeAsync(async () =>
+            if (string.IsNullOrEmpty(TbMacPassword.Text))
             {
-                var box = MessageBoxManager
-                    .GetMessageBoxStandard("提示", msg);
-                await box.ShowWindowDialogAsync(this);
-            });
-            return;
+                string msg = "您确定你的锁屏密码是空吗？！\n" +
+                             "由于macOS的安全机制，执行关机权限需要获得您的登录密码(非AppleID)。\n" +
+                             "您必须去[系统设置]里设置有效的登录密码才能使用此应用！";
+                await Dispatcher.UIThread.InvokeAsync(async () =>
+                {
+                    var box = MessageBoxManager
+                        .GetMessageBoxStandard("提示", msg);
+                    await box.ShowWindowDialogAsync(this);
+                });
+                return;
+            }
         }
         MainWindow.Setting.PingHost = sTbPingHost;
         MainWindow.Setting.PingTickSeconds = Convert.ToUInt32(sTbPingTickSeconds);
         MainWindow.Setting.CountdownSeconds = Convert.ToUInt32(sTbCountdownSeconds);
-        MainWindow.Setting.MacPassword = TbMacPassword.Text;
+        MainWindow.Setting.MacPassword = sTbMacPassword;
         
         // 更新配置文件
         try

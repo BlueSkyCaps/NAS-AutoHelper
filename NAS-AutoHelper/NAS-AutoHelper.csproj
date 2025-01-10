@@ -4,12 +4,15 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <UseAppHost>true</UseAppHost>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <RuntimeIdentifiers>osx-arm64;osx-x64;linux-x64;win-x64;win-arm64</RuntimeIdentifiers>
     </PropertyGroup>
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\*" />
+        <AvaloniaResource Include="_mac_publish\tray.icns" />
         <PackageReference Include="Avalonia" Version="11.2.1" />
         <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
