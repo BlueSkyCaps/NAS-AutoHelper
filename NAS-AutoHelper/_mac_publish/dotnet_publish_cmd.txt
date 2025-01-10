@@ -1,0 +1,5 @@
+dotnet publish -r osx-arm64 --configuration Release -p:UseAppHost=true
+dotnet publish -r osx-x64 --configuration Release -p:UseAppHost=true
+dotnet publish -r win-x64 --configuration Release -p:UseAppHost=true
+
+# dotnet编译macOS可执行文件，然后再用sh脚本打app包
