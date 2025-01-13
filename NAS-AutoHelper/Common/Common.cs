@@ -55,19 +55,26 @@ public static class Common
             
             if (!string.IsNullOrWhiteSpace(error))
             {
-                throw new Exception("路由器/网线/光猫/宽带与本设备断开连接-"+error);
+                throw new Exception("路由器/网线/光猫/宽带与本设备断开连接 - "+error);
             }
             /*
-             但是存在这种情况：路由器仍在正常连接，但无法接入互联网：光猫/宽带/路由器无网络源
-             这种情况是不会输出到错误流的，需要判断字符串是否包含：0 packets received
+             * macOS:
+             * 但是存在这种情况：路由器仍在正常连接，但无法接入互联网：光猫/宽带/路由器无网络源
+             * 这种情况是不会输出到错误流的，需要判断字符串是否包含：0 packets received
              */
             if (!string.IsNullOrWhiteSpace(output))
             {
                 if (output.ToLower().Contains("0 packets received"))
                 {
-                    throw new Exception("路由器/网线/光猫/宽带无网络源-0 packets received");
+                    throw new Exception("路由器/网线/光猫/宽带无网络源 - 0 packets received");
+                }
+                // windows还存在这种情况：已断网无法访问目标主机。但是错误流没有数据
+                if (output.ToLower().Contains("无法访问"))
+                {
+                    throw new Exception("路由器/网线/光猫/宽带无网络源 - 无法访问目标主机");
                 }
             }
+
             status.Message = output;
             status.Success = true;
             return status;  // 返回标准输出
