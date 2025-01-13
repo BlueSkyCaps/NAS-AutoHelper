@@ -69,7 +69,7 @@ public static class Common
                     throw new Exception("路由器/网线/光猫/宽带无网络源 - 0 packets received");
                 }
                 // windows还存在这种情况：已断网无法访问目标主机。但是错误流没有数据
-                if (output.ToLower().Contains("无法访问"))
+                if (output.ToLower().Contains("无法访问")|| output.ToLower().Contains("传输失败"))
                 {
                     throw new Exception("路由器/网线/光猫/宽带无网络源 - 无法访问目标主机");
                 }
