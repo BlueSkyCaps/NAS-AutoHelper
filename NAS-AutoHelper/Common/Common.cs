@@ -10,7 +10,7 @@ namespace NAS_AutoHelper;
 public static class Common
 {
     public static readonly string UserDataDir = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".NAS-AutoHelper");
+        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".autoHelper-ups");
     public static readonly string UserDataPath = Path.Combine(UserDataDir, "Settings.json");
     
     public static bool IsValidIPv4(string ipAddress)
