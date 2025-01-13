@@ -19,7 +19,7 @@ public class TcpConnect
     /// </summary>
     private static void SendTcpServerMessage()
     {
-        string token = "@NAS!ShutdownCanceled";
+        string token = "@UPS!ShutdownCanceled";
         string ipAddress = "127.0.0.1";  
         int port = 12345;  // 服务端的端口号
 

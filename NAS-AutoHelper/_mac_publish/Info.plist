@@ -4,9 +4,9 @@
     <dict>
         <!-- 应用程序的名称和其他基本信息 -->
         <key>CFBundleName</key>
-        <string>NAS自动关机</string> <!-- 应用名称 -->
+        <string>UPS自动关机</string> <!-- 应用名称 -->
         <key>CFBundleDisplayName</key>
-        <string>NAS自动关机</string> <!-- 显示在应用图标下的名称 -->
+        <string>UPS自动关机</string> <!-- 显示在应用图标下的名称 -->
         <key>CFBundleIdentifier</key>
         <string>top.reminisce.NAS-AutoHelper</string> <!-- 应用程序的唯一标识符 -->
         <key>CFBundleVersion</key>

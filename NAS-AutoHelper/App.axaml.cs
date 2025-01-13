@@ -64,7 +64,7 @@ public partial class App : Application
         Dispatcher.UIThread.InvokeAsync( () =>
         {
             string msg = "此应用常驻后台，若你的电脑断网，则会自动关机，防止意外断电造成设备损害。\n" +
-                         "若你的NAS没有提供Windows或macOS的自动关机程序，这是简单的代替品。\n" +
+                         "若你的UPS没有提供Windows或macOS的自动关机程序，这是简单的代替品。\n" +
                          "可在桌面 [菜单栏/托盘] 中点击应用图标进行操作。\n" +
                          "如果你无法找到应用图标，请在 [系统设置] 里让它重新显示，然后重启电脑。\n" +
                          "小红书/抖音/B站关注@芝士虾米。"; 

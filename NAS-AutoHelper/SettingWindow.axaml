@@ -8,7 +8,7 @@
         x:Class="NAS_AutoHelper.SettingWindow"
         SizeToContent="WidthAndHeight"
         CanResize="False"
-        Title="设置-NAS自动关机"
+        Title="设置-UPS自动关机"
         x:DataType="model:SettingModel">
         <Panel Margin="80,0,80,10">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">

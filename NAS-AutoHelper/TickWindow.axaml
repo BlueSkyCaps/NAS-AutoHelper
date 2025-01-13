@@ -7,7 +7,7 @@
         x:Class="NAS_AutoHelper.TickWindow"
         Width="300" Height="200" CanResize="False"
         Closing="Window_OnClosing"
-        Title="NAS自动关机">
+        Title="UPS自动关机">
     <Panel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Name="CancelText" Text="{Binding $parent[nasAutoHelper:TickWindow].Seconds, StringFormat='断电无网络连接，将在 {0} s后关机。'}" TextWrapping="Wrap"></TextBlock>

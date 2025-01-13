@@ -28,7 +28,7 @@ public partial class MainWindow : Window
             Console.WriteLine(processName);
             Dispatcher.UIThread.InvokeAsync(async () =>
             {
-                string msg = "已有一个NAS自动关机应用正在运行，无法重复启动。\n" +
+                string msg = "已有一个UPS自动关机应用正在运行，无法重复启动。\n" +
                              "可在桌面 [菜单栏/托盘] 中点击应用图标进行操作。\n" +
                              "如果你无法找到应用图标，请在 [系统设置] 里让它重新显示，然后重启电脑。";
                 var box = MessageBoxManager
@@ -108,7 +108,7 @@ public partial class MainWindow : Window
                              "请查看您的电源是否电量不足，若是，请立即手动关机以防止断电造成的设备损害。\n"+
                            $"(错误提示：{status.Message})";
                 var box = MessageBoxManager
-                    .GetMessageBoxStandard("NAS奔溃", msg);
+                    .GetMessageBoxStandard("UPS奔溃", msg);
                 await box.ShowAsync();
                 Environment.Exit(1);
             });
