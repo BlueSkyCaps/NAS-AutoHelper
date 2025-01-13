@@ -57,6 +57,7 @@ public partial class MainWindow : Window
         Console.WriteLine("InitNetLogic");
         // 无论如何，先关闭关机的Timer。即使第一次它还没被创建。用于后续点击撤销关机按钮时统一关闭
         _shutdownTimer?.Dispose();
+        _mainPingTimer?.Dispose();
         // 启动：每倒计时秒钟触发一次Tick方法 ping路由 
         _mainPingTimer = new Timer(PingTickAction, null, TimeSpan.FromSeconds(Setting.PingTickSeconds), TimeSpan.FromSeconds(Setting.PingTickSeconds)); 
     }
