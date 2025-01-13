@@ -1,0 +1,5 @@
+dotnet publish -r win-x64 --configuration Release -p:UseAppHost=true
+dotnet publish -r win-arm64 --configuration Release -p:UseAppHost=true
+
+# dotnet编译可执行文件，然后可以用anno setup脚本打包exe安装包
+

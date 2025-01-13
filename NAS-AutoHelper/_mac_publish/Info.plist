@@ -20,19 +20,5 @@
         <!-- 应用程序的图标 -->
         <key>CFBundleIconFile</key>
         <string>tray.icns</string>
-<!--        &lt;!&ndash; 登录项支持 &ndash;&gt;-->
-<!--        <key>SMPrivilegedExecutables</key>-->
-<!--        <dict>-->
-<!--            <key>top.reminisce.NAS-AutoHelper.helper</key>-->
-<!--            <string>identifier</string>-->
-<!--        </dict>-->
-
-<!--        &lt;!&ndash; 适用于自动化的额外权限 &ndash;&gt;-->
-<!--        <key>NSAppleEventsUsageDescription</key>-->
-<!--        <string>This app needs 适用于自动化的额外权限</string>-->
-
-<!--        &lt;!&ndash; 其他权限声明 &ndash;&gt;-->
-<!--        <key>NSFileSystemUsageDescription</key>-->
-<!--        <string>This app requires 其他权限</string>-->
     </dict>
 </plist>
