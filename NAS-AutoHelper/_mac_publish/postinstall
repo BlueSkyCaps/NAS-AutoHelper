@@ -5,5 +5,5 @@
 osascript <<EOF
 display dialog "UPS帮助程序可以开机自启动，但需要请求对System Events的访问权限。请在随后弹出的提示框中点击‘允许’，以完成添加登录项的操作。" buttons {"继续"} default button "继续"
 EOF
-osascript -e 'tell application "System Events" to make login item at end with properties {name: "NAS-AutoHelper", path: "/Applications/NAS-AutoHelper.app", hidden: false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "UPS自动关机", path: "/Applications/UPS自动关机.app", hidden: false}'
 exit 0

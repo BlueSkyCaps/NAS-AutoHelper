@@ -8,7 +8,7 @@
         <key>CFBundleDisplayName</key>
         <string>UPS自动关机</string> <!-- 显示在应用图标下的名称 -->
         <key>CFBundleIdentifier</key>
-        <string>top.reminisce.NAS-AutoHelper</string> <!-- 应用程序的唯一标识符 -->
+        <string>top.reminisce.autohelper-ups</string> <!-- 应用程序的唯一标识符 -->
         <key>CFBundleVersion</key>
         <string>1.0.0</string> <!-- 应用程序的版本号 -->
         <key>CFBundleShortVersionString</key>
@@ -16,7 +16,7 @@
         <key>NSHighResolutionCapable</key>
         <true/>
         <key>CFBundleExecutable</key>
-        <string>NAS-AutoHelper</string> <!-- 应用程序的可执行文件名 -->
+        <string>UPS自动关机</string> <!-- 应用程序的可执行文件名 -->
         <!-- 应用程序的图标 -->
         <key>CFBundleIconFile</key>
         <string>tray.icns</string>

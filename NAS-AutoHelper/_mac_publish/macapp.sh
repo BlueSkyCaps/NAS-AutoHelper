@@ -1,5 +1,5 @@
 #!/bin/bash
-APP_NAME="./NAS-AutoHelper.app"
+APP_NAME="./UPS自动关机.app"
 PUBLISH_OUTPUT_DIRECTORY="../bin/Release/net8.0/osx-arm64/publish/."
 # PUBLISH_OUTPUT_DIRECTORY should point to the output directory of your dotnet publish command.
 # One example is /path/to/your/csproj/bin/Release/netcoreapp3.1/osx-x64/publish/.
