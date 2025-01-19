@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace NAS_AutoHelper.Model;
+namespace UPS_AutoHelper.Model;
 
 public class SettingModel:INotifyPropertyChanged
 {

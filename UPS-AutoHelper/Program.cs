@@ -7,7 +7,7 @@ using Avalonia.Threading;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 class Program
 {
     // Initialization code. Don't use any Avalonia, third-party APIs or any

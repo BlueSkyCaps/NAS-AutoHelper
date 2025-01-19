@@ -9,7 +9,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using MsBox.Avalonia;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 public partial class App : Application
 {

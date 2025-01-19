@@ -7,9 +7,9 @@ using Avalonia.Controls;
 using Avalonia.Threading;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
-using NAS_AutoHelper.Model;
+using UPS_AutoHelper.Model;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 /// <summary>
 /// 在后台一直隐藏运行 无法正常关闭的主窗口

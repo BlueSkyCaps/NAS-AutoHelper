@@ -5,7 +5,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 public static class Common
 {

@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 public class ExecuteCommandBase
 {

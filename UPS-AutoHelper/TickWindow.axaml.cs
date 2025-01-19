@@ -6,7 +6,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 public partial class TickWindow : Window
 {

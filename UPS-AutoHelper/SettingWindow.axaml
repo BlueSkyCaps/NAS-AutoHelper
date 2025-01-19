@@ -2,10 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:model="clr-namespace:NAS_AutoHelper.Model"
-        xmlns:nasAutoHelper="clr-namespace:NAS_AutoHelper"
+        xmlns:model="clr-namespace:UPS_AutoHelper.Model"
+        xmlns:upsAutoHelper="clr-namespace:UPS_AutoHelper"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="NAS_AutoHelper.SettingWindow"
+        x:Class="UPS_AutoHelper.SettingWindow"
         SizeToContent="WidthAndHeight"
         CanResize="False"
         Title="设置-UPS自动关机"
@@ -18,7 +18,7 @@
                         <NumericUpDown Minimum="15" Name="TbPingTickSeconds" Value="{Binding PingTickSeconds, Mode=OneWay}"/>
                         <Label Content="关机倒计时(秒)："></Label>
                         <NumericUpDown Minimum="0" Name="TbCountdownSeconds" Value="{Binding CountdownSeconds, Mode=OneWay}"/>
-                        <StackPanel Orientation="Vertical" Name="TbMacPanel" IsVisible="{Binding $parent[nasAutoHelper:SettingWindow].MacPanelVis}">
+                        <StackPanel Orientation="Vertical" Name="TbMacPanel" IsVisible="{Binding $parent[upsAutoHelper:SettingWindow].MacPanelVis}">
                                 <Label Content="Mac锁屏密码(空则忽略)："></Label>
                                 <TextBox PasswordChar="•" Name="TbMacPassword" Text="{Binding MacPassword, Mode=OneWay}"></TextBox>
                         </StackPanel>

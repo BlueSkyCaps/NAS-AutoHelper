@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 public class TcpConnect
 {

@@ -8,9 +8,9 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using MsBox.Avalonia;
-using NAS_AutoHelper.Model;
+using UPS_AutoHelper.Model;
 
-namespace NAS_AutoHelper;
+namespace UPS_AutoHelper;
 
 public partial class SettingWindow : Window
 {
