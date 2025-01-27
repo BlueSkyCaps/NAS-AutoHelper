@@ -1,5 +1,5 @@
-dotnet publish -r win-x64 --configuration Release -p:UseAppHost=true -p:AssemblyName=UPS自动关机
-dotnet publish -r win-arm64 --configuration Release -p:UseAppHost=true -p:AssemblyName=UPS自动关机
+dotnet publish -r win-x64 --configuration Release -p:UseAppHost=true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true --self-contained true -p:AssemblyName=UPS自动关机
+dotnet publish -r win-arm64 --configuration Release -p:UseAppHost=true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true --self-contained true -p:AssemblyName=UPS自动关机
 
-# dotnet编译可执行文件，然后可以用anno setup脚本打包exe安装包
+# dotnet编译自包含运行时的可执行文件，然后可以用anno setup脚本打包exe安装包
 
