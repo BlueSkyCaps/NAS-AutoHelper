@@ -23,7 +23,7 @@ DefaultDirName={autopf}\UPS-AutoHepler
 DefaultGroupName=UPS自动关机
 ; 以下行取消注释，以在非管理安装模式下运行（仅为当前用户安装）。
 ;PrivilegesRequired=lowest
-OutputDir=%USERPROFILE%\Desktop
+OutputDir={#GetEnv('USERPROFILE')}\Desktop
 OutputBaseFilename=upsauto-settup
 Compression=lzma
 SolidCompression=yes
@@ -36,12 +36,12 @@ Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "%USERPROFILE%\Desktop\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "%USERPROFILE%\Desktop\publish\av_libglesv2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "%USERPROFILE%\Desktop\publish\libHarfBuzzSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "%USERPROFILE%\Desktop\publish\libSkiaSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "%USERPROFILE%\Desktop\publish\tray.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "%USERPROFILE%\Desktop\publish\tray.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#GetEnv('USERPROFILE')}\Desktop\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#GetEnv('USERPROFILE')}\Desktop\publish\av_libglesv2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#GetEnv('USERPROFILE')}\Desktop\publish\libHarfBuzzSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#GetEnv('USERPROFILE')}\Desktop\publish\libSkiaSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#GetEnv('USERPROFILE')}\Desktop\publish\tray.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#GetEnv('USERPROFILE')}\Desktop\publish\tray.png"; DestDir: "{app}"; Flags: ignoreversion
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 
 [Icons]
